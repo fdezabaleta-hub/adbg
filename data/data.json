@@ -1,0 +1,18 @@
+{
+  "resumen": {
+    "stockTotal": 4820,
+    "pesoPromedio": 312,
+    "camposActivos": 8
+  },
+  "campos": [
+    { "nombre": "Castelli", "stock": 809, "pesoPromedio": 286, "estado": "ok", "estadoTexto": "Normal" },
+    { "nombre": "Pila", "stock": 530, "pesoPromedio": 294, "estado": "ok", "estadoTexto": "Normal" },
+    { "nombre": "Chivilcoy", "stock": 334, "pesoPromedio": 340, "estado": "warning", "estadoTexto": "Revisar" },
+    { "nombre": "San Justo", "stock": 546, "pesoPromedio": 207, "estado": "alert", "estadoTexto": "Atención" }
+  ],
+  "novedades": [
+    { "campo": "Castelli", "texto": "Nueva pesada recibida" },
+    { "campo": "Pila", "texto": "Pasturas en buena condición" },
+    { "campo": "Chivilcoy", "texto": "Ingreso a terminación" }
+  ]
+}
