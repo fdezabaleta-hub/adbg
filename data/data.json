@@ -1,18 +1,130 @@
 {
-  "resumen": {
-    "stockTotal": 4820,
-    "pesoPromedio": 312,
-    "camposActivos": 8
-  },
   "campos": [
-    { "nombre": "Castelli", "stock": 809, "pesoPromedio": 286, "estado": "ok", "estadoTexto": "Normal" },
-    { "nombre": "Pila", "stock": 530, "pesoPromedio": 294, "estado": "ok", "estadoTexto": "Normal" },
-    { "nombre": "Chivilcoy", "stock": 334, "pesoPromedio": 340, "estado": "warning", "estadoTexto": "Revisar" },
-    { "nombre": "San Justo", "stock": 546, "pesoPromedio": 207, "estado": "alert", "estadoTexto": "Atención" }
-  ],
-  "novedades": [
-    { "campo": "Castelli", "texto": "Nueva pesada recibida" },
-    { "campo": "Pila", "texto": "Pasturas en buena condición" },
-    { "campo": "Chivilcoy", "texto": "Ingreso a terminación" }
+    {
+      "id": "las-cabezas",
+      "nombre": "Las Cabezas",
+      "fechaIngreso": "02/05/2026",
+      "stockIngreso": 1070,
+      "mortandad": null,
+      "stockActual": null,
+      "pesoIngresoPromedio": 215.27,
+      "pesoEstimadoHoy": null,
+      "fechaUltimaPesada": null,
+      "pesoUltimaPesada": null,
+      "novedades": [],
+      "comentarios": null
+    },
+    {
+      "id": "san-vicente",
+      "nombre": "San Vicente",
+      "fechaIngreso": "19/04/2026",
+      "stockIngreso": 339,
+      "mortandad": null,
+      "stockActual": null,
+      "pesoIngresoPromedio": 207.48,
+      "pesoEstimadoHoy": null,
+      "fechaUltimaPesada": null,
+      "pesoUltimaPesada": null,
+      "novedades": [],
+      "comentarios": null
+    },
+    {
+      "id": "brunso",
+      "nombre": "Brunso",
+      "fechaIngreso": "28/04/2026",
+      "stockIngreso": 999,
+      "mortandad": null,
+      "stockActual": null,
+      "pesoIngresoPromedio": 201.15,
+      "pesoEstimadoHoy": null,
+      "fechaUltimaPesada": null,
+      "pesoUltimaPesada": null,
+      "novedades": [],
+      "comentarios": null
+    },
+    {
+      "id": "ballesteros",
+      "nombre": "Ballesteros",
+      "fechaIngreso": "11/04/2026",
+      "stockIngreso": 298,
+      "mortandad": null,
+      "stockActual": null,
+      "pesoIngresoPromedio": 201.76,
+      "pesoEstimadoHoy": null,
+      "fechaUltimaPesada": null,
+      "pesoUltimaPesada": null,
+      "novedades": [],
+      "comentarios": null
+    },
+    {
+      "id": "prigioni",
+      "nombre": "Prigioni",
+      "fechaIngreso": "03/05/2026",
+      "stockIngreso": 419,
+      "mortandad": null,
+      "stockActual": null,
+      "pesoIngresoPromedio": 220.14,
+      "pesoEstimadoHoy": null,
+      "fechaUltimaPesada": null,
+      "pesoUltimaPesada": null,
+      "novedades": [],
+      "comentarios": null
+    },
+    {
+      "id": "la-negra-sa",
+      "nombre": "La Negra SA",
+      "fechaIngreso": "13/05/2026",
+      "stockIngreso": 1066,
+      "mortandad": null,
+      "stockActual": null,
+      "pesoIngresoPromedio": 225.00,
+      "pesoEstimadoHoy": null,
+      "fechaUltimaPesada": null,
+      "pesoUltimaPesada": null,
+      "novedades": [],
+      "comentarios": null
+    },
+    {
+      "id": "herrera-vega",
+      "nombre": "Herrera Vega",
+      "fechaIngreso": "17/05/2026",
+      "stockIngreso": 302,
+      "mortandad": null,
+      "stockActual": null,
+      "pesoIngresoPromedio": 217.55,
+      "pesoEstimadoHoy": null,
+      "fechaUltimaPesada": null,
+      "pesoUltimaPesada": null,
+      "novedades": [],
+      "comentarios": null
+    },
+    {
+      "id": "los-riojanos",
+      "nombre": "Los Riojanos",
+      "fechaIngreso": "09/05/2026",
+      "stockIngreso": 313,
+      "mortandad": null,
+      "stockActual": null,
+      "pesoIngresoPromedio": 204.86,
+      "pesoEstimadoHoy": null,
+      "fechaUltimaPesada": null,
+      "pesoUltimaPesada": null,
+      "novedades": [],
+      "comentarios": null
+    },
+    {
+      "id": "conecar",
+      "nombre": "Conecar",
+      "fechaIngreso": null,
+      "stockIngreso": 0,
+      "mortandad": null,
+      "stockActual": null,
+      "pesoIngresoPromedio": 0,
+      "pesoEstimadoHoy": null,
+      "fechaUltimaPesada": null,
+      "pesoUltimaPesada": null,
+      "novedades": [],
+      "comentarios": null
+    }
   ]
 }

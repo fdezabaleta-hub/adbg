@@ -127,3 +127,82 @@ td {
   color: #173f35;
   margin-bottom: 10px;
 }
+
+.volver-link {
+  display: inline-block;
+  margin: 25px 0 0;
+  color: #173f35;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.volver-link:hover {
+  text-decoration: underline;
+}
+
+.campos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.campo-card {
+  display: block;
+  background: white;
+  padding: 22px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  color: inherit;
+  text-decoration: none;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.campo-card:hover {
+  box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+  transform: translateY(-2px);
+}
+
+.campo-card h3 {
+  margin: 0 0 14px;
+  color: #173f35;
+  font-size: 18px;
+}
+
+.dato-linea {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+.dato-linea span {
+  color: #64748b;
+}
+
+.dato-linea:last-of-type {
+  border-bottom: none;
+}
+
+.ver-detalle {
+  display: inline-block;
+  margin-top: 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #173f35;
+}
+
+.ficha-titulo {
+  color: #173f35;
+  margin-bottom: 20px;
+}
+
+.novedad-item {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.novedad-item:last-child {
+  border-bottom: none;
+}
