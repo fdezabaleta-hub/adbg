@@ -1,8 +1,8 @@
 {
   "campos": [
     {
-      "id": "las-cabezas",
-      "nombre": "Las Cabezas",
+      "id": "campo-1",
+      "nombre": "Campo 1",
       "fechaIngreso": "02/05/2026",
       "stockIngreso": 1070,
       "mortandad": null,
@@ -15,8 +15,8 @@
       "comentarios": null
     },
     {
-      "id": "san-vicente",
-      "nombre": "San Vicente",
+      "id": "campo-2",
+      "nombre": "Campo 2",
       "fechaIngreso": "19/04/2026",
       "stockIngreso": 339,
       "mortandad": null,
@@ -29,8 +29,8 @@
       "comentarios": null
     },
     {
-      "id": "brunso",
-      "nombre": "Brunso",
+      "id": "campo-3",
+      "nombre": "Campo 3",
       "fechaIngreso": "28/04/2026",
       "stockIngreso": 999,
       "mortandad": null,
@@ -43,8 +43,8 @@
       "comentarios": null
     },
     {
-      "id": "ballesteros",
-      "nombre": "Ballesteros",
+      "id": "campo-4",
+      "nombre": "Campo 4",
       "fechaIngreso": "11/04/2026",
       "stockIngreso": 298,
       "mortandad": null,
@@ -57,8 +57,8 @@
       "comentarios": null
     },
     {
-      "id": "prigioni",
-      "nombre": "Prigioni",
+      "id": "campo-5",
+      "nombre": "Campo 5",
       "fechaIngreso": "03/05/2026",
       "stockIngreso": 419,
       "mortandad": null,
@@ -71,8 +71,8 @@
       "comentarios": null
     },
     {
-      "id": "la-negra-sa",
-      "nombre": "La Negra SA",
+      "id": "campo-6",
+      "nombre": "Campo 6",
       "fechaIngreso": "13/05/2026",
       "stockIngreso": 1066,
       "mortandad": null,
@@ -85,8 +85,8 @@
       "comentarios": null
     },
     {
-      "id": "herrera-vega",
-      "nombre": "Herrera Vega",
+      "id": "campo-7",
+      "nombre": "Campo 7",
       "fechaIngreso": "17/05/2026",
       "stockIngreso": 302,
       "mortandad": null,
@@ -99,8 +99,8 @@
       "comentarios": null
     },
     {
-      "id": "los-riojanos",
-      "nombre": "Los Riojanos",
+      "id": "campo-8",
+      "nombre": "Campo 8",
       "fechaIngreso": "09/05/2026",
       "stockIngreso": 313,
       "mortandad": null,
@@ -113,8 +113,8 @@
       "comentarios": null
     },
     {
-      "id": "conecar",
-      "nombre": "Conecar",
+      "id": "campo-9",
+      "nombre": "Campo 9",
       "fechaIngreso": null,
       "stockIngreso": 0,
       "mortandad": null,
