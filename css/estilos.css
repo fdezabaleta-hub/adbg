@@ -206,3 +206,68 @@ td {
 .novedad-item:last-child {
   border-bottom: none;
 }
+
+.selector-fila {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.selector-fila label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.selector-fila select {
+  font-family: inherit;
+  font-size: 14px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background: white;
+  color: #1f2937;
+  min-width: 240px;
+}
+
+.filtros-rango {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.filtros-rango button {
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  background: white;
+  color: #64748b;
+  cursor: pointer;
+}
+
+.filtros-rango button:hover {
+  border-color: #173f35;
+  color: #173f35;
+}
+
+.filtros-rango button.activo {
+  background: #173f35;
+  border-color: #173f35;
+  color: white;
+}
+
+.grafico-container {
+  position: relative;
+  height: 340px;
+}
+
+.subtitulo {
+  color: #64748b;
+  margin-top: -10px;
+}

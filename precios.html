@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADBlick Ganadería · Evolución de precios</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+
+<header>
+  <h1>ADBlick Ganadería</h1>
+  <p>Dashboard de gestión · Módulo 12</p>
+</header>
+
+<nav class="navbar">
+  <a href="index.html">Resumen</a>
+  <a href="campos.html">Campos</a>
+  <a href="evolucion.html">Evolución productiva</a>
+  <a href="precios.html" class="active">Evolución de precios</a>
+  <a href="informes.html">Informes</a>
+</nav>
+
+<main>
+
+  <section>
+    <h2>Evolución de precios</h2>
+    <p class="subtitulo" id="fechaUltimoDato">Cargando datos...</p>
+  </section>
+
+  <section>
+    <div class="selector-fila">
+      <label for="selectorCategoria">Categoría</label>
+      <select id="selectorCategoria"></select>
+    </div>
+
+    <div class="cards" id="indicadoresPrecios"></div>
+  </section>
+
+  <section>
+    <h2>Evolución histórica</h2>
+
+    <div class="filtros-rango" id="filtrosRango">
+      <button data-rango="1M">1M</button>
+      <button data-rango="3M">3M</button>
+      <button data-rango="6M">6M</button>
+      <button data-rango="1A">1A</button>
+      <button data-rango="TODO" class="activo">Todo</button>
+    </div>
+
+    <div class="grafico-container">
+      <canvas id="graficoPrecios"></canvas>
+    </div>
+  </section>
+
+  <section>
+    <h2>Precios actuales por categoría</h2>
+
+    <table>
+
+      <tr>
+        <th>Categoría</th>
+        <th>Cantidad</th>
+        <th>Prom. Kilo</th>
+        <th>Kilo+</th>
+        <th>Kilo-</th>
+        <th>Fecha</th>
+      </tr>
+
+      <tbody id="tablaPreciosActuales"></tbody>
+
+    </table>
+  </section>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<script src="js/precios.js"></script>
+
+</body>
+</html>
