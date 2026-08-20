@@ -1,0 +1,70 @@
+name: Actualizar precios de ganado
+
+on:
+  schedule:
+    # 23:00 UTC = 20:00 Argentina (UTC-3), de lunes a viernes.
+    - cron: '0 23 * * 1-5'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  actualizar-precios:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Ejecutar actualizador de precios
+        run: python actualizar_precios.py
+
+      - name: Verificar que esten las 14 categorias de hoy
+        run: |
+          python - <<'EOF'
+          import json
+          import sys
+          from datetime import date
+
+          import actualizar_precios as ap
+
+          fecha_hoy = date.today().strftime("%d/%m/%Y")
+
+          with open(ap.RUTA_PRECIOS, encoding="utf-8") as archivo:
+              datos = json.load(archivo)
+
+          categorias_hoy = {r["categoria"] for r in datos if r["fecha"] == fecha_hoy}
+          faltantes = [c for c in ap.CATEGORIAS_ESPERADAS if c not in categorias_hoy]
+
+          if faltantes:
+              print("Faltan categorias para la fecha de hoy. No se va a hacer commit.")
+              for categoria in faltantes:
+                  print(f"  - {categoria}")
+              sys.exit(1)
+
+          print(f"OK: las {len(ap.CATEGORIAS_ESPERADAS)} categorias estan presentes para {fecha_hoy}.")
+          EOF
+
+      - name: Verificar si data/precios.json cambio
+        id: cambios
+        run: |
+          if git diff --quiet -- data/precios.json; then
+            echo "hubo_cambios=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "hubo_cambios=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit y push del historico actualizado
+        if: steps.cambios.outputs.hubo_cambios == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/precios.json
+          git commit -m "Actualizar precios - $(date -u +'%Y-%m-%d')"
+          git push origin HEAD:main
