@@ -333,3 +333,62 @@ td {
 .sin-archivo {
   color: #94a3b8;
 }
+
+.texto-introductorio {
+  color: #475569;
+  line-height: 1.6;
+}
+
+.filtros-grid {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.filtro-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 180px;
+}
+
+.filtro-campo label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.filtro-campo select,
+.filtro-campo input {
+  font-family: inherit;
+  font-size: 14px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background: #f4f6f4;
+  color: #94a3b8;
+}
+
+.filtro-campo select:disabled,
+.filtro-campo input:disabled {
+  cursor: not-allowed;
+}
+
+.tabla-vacia {
+  text-align: center;
+  color: #94a3b8;
+  padding: 30px 12px !important;
+}
+
+.sin-datos-cargados {
+  text-align: center;
+  padding: 40px 20px;
+  color: #64748b;
+}
+
+.sin-datos-cargados h3 {
+  color: #173f35;
+  margin: 0 0 6px;
+}

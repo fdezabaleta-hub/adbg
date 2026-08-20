@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADBlick Ganadería · Movimientos</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+
+<header>
+  <h1>ADBlick Ganadería</h1>
+  <p>Dashboard de gestión · Módulo 12</p>
+</header>
+
+<nav class="navbar">
+  <a href="index.html">Resumen</a>
+  <a href="campos.html">Campos</a>
+  <a href="evolucion.html">Evolución productiva</a>
+  <a href="precios.html">Evolución de precios</a>
+  <a href="movimientos.html" class="active">Movimientos</a>
+  <a href="valuacion.html">Valuación</a>
+  <a href="informes.html">Informes</a>
+</nav>
+
+<main>
+
+  <section>
+    <h2>Movimientos de hacienda</h2>
+    <p class="texto-introductorio">
+      Esta sección va a mostrar el historial de movimientos de hacienda
+      (compras, ventas, transferencias entre campos, mortandad y cambios de
+      categoría). La información se va a incorporar próximamente desde un
+      archivo Excel de movimientos.
+    </p>
+  </section>
+
+  <section>
+    <h2>Filtros</h2>
+    <div class="filtros-grid">
+      <div class="filtro-campo">
+        <label for="filtroFecha">Fecha</label>
+        <input type="text" id="filtroFecha" placeholder="Todas las fechas" disabled>
+      </div>
+      <div class="filtro-campo">
+        <label for="filtroTipo">Tipo de movimiento</label>
+        <select id="filtroTipo" disabled>
+          <option>Todos los tipos</option>
+          <option>Compra</option>
+          <option>Venta</option>
+          <option>Transferencia</option>
+          <option>Mortandad</option>
+          <option>Cambio de categoría</option>
+        </select>
+      </div>
+      <div class="filtro-campo">
+        <label for="filtroCampo">Campo</label>
+        <select id="filtroCampo" disabled>
+          <option>Todos los campos</option>
+        </select>
+      </div>
+      <div class="filtro-campo">
+        <label for="filtroCategoria">Categoría</label>
+        <select id="filtroCategoria" disabled>
+          <option>Todas las categorías</option>
+        </select>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Historial de movimientos</h2>
+
+    <table>
+      <tr>
+        <th>Fecha</th>
+        <th>Tipo</th>
+        <th>Campo</th>
+        <th>Categoría</th>
+        <th>Cabezas</th>
+        <th>Kg</th>
+        <th>Observaciones</th>
+      </tr>
+      <tbody>
+        <tr>
+          <td colspan="7" class="tabla-vacia">Todavía no hay movimientos cargados</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+</main>
+
+</body>
+</html>
