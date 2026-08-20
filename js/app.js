@@ -31,6 +31,21 @@ function buscarCampo(datos, id) {
   return datos.campos.find(c => c.id === id) || null;
 }
 
+function parsearFechaDDMMAAAA(fechaStr) {
+  const [dia, mes, anio] = fechaStr.split('/').map(Number);
+  return new Date(anio, mes - 1, dia);
+}
+
+// La "última pesada" ya no se guarda a mano: se deriva siempre del registro
+// más reciente de campo.pesadas, para que Resumen y la grilla de Campos
+// nunca queden desincronizados del historial real.
+function obtenerUltimaPesada(campo) {
+  if (!campo.pesadas || campo.pesadas.length === 0) return null;
+  return [...campo.pesadas].sort(
+    (a, b) => parsearFechaDDMMAAAA(b.fecha) - parsearFechaDDMMAAAA(a.fecha)
+  )[0];
+}
+
 function calcularStockTotal(campos) {
   const valores = campos.map(c => c.stockActual).filter(v => v !== null && v !== undefined);
   if (valores.length === 0) return null;
@@ -113,8 +128,9 @@ function renderGridCampos(datos) {
   gridEl.innerHTML = datos.campos
     .map(c => {
       const estado = estadoInformacion(c);
-      const ultimaPesada = c.fechaUltimaPesada
-        ? `${formatFecha(c.fechaUltimaPesada)} — ${formatPeso(c.pesoUltimaPesada)}`
+      const pesada = obtenerUltimaPesada(c);
+      const ultimaPesada = pesada
+        ? `${formatFecha(pesada.fecha)} — ${formatPeso(pesada.pesoPromedio)}`
         : 'Sin dato';
 
       return `
@@ -132,24 +148,25 @@ function renderGridCampos(datos) {
     .join('');
 }
 
-function renderFicha(datos) {
-  const fichaEl = document.getElementById('fichaCampo');
-  if (!fichaEl) return;
+const PESTANAS_FICHA = [
+  { id: 'resumen', etiqueta: 'Resumen' },
+  { id: 'pesadas', etiqueta: 'Pesadas' },
+  { id: 'novedades', etiqueta: 'Novedades' },
+  { id: 'documentos', etiqueta: 'Documentos' },
+];
 
-  const id = new URLSearchParams(window.location.search).get('id');
-  const campo = id ? buscarCampo(datos, id) : null;
+function renderSubnavFicha(campoId, tabActiva) {
+  return `
+    <nav class="subnav-ficha">
+      ${PESTANAS_FICHA.map(p => `
+        <a href="campo.html?id=${encodeURIComponent(campoId)}&tab=${p.id}" class="${p.id === tabActiva ? 'active' : ''}">${p.etiqueta}</a>
+      `).join('')}
+    </nav>
+  `;
+}
 
-  if (!campo) {
-    fichaEl.innerHTML = `
-      <section class="proximamente">
-        <h2>Campo no encontrado</h2>
-        <p>Volvé a <a href="campos.html">Campos</a> y elegí un establecimiento de la lista.</p>
-      </section>
-    `;
-    return;
-  }
-
-  document.title = `ADBlick Ganadería · ${campo.nombre}`;
+function renderTabResumen(campo) {
+  const pesada = obtenerUltimaPesada(campo);
 
   const novedadesOrdenadas = [...campo.novedades].sort((a, b) => {
     const [dA, mA, yA] = a.fecha.split('/').map(Number);
@@ -157,9 +174,7 @@ function renderFicha(datos) {
     return new Date(yB, mB - 1, dB) - new Date(yA, mA - 1, dA);
   });
 
-  fichaEl.innerHTML = `
-    <h2 class="ficha-titulo">${campo.nombre}</h2>
-
+  return `
     <section>
       <h2>Ingreso</h2>
       <div class="cards">
@@ -192,6 +207,7 @@ function renderFicha(datos) {
         <div class="card">
           <h3>PESO ESTIMADO A HOY</h3>
           <div class="number">${formatPeso(campo.pesoEstimadoHoy)}</div>
+          <span class="etiqueta-dato etiqueta-estimado">Estimado</span>
         </div>
       </div>
     </section>
@@ -201,11 +217,12 @@ function renderFicha(datos) {
       <div class="cards">
         <div class="card">
           <h3>FECHA</h3>
-          <div class="number">${formatFecha(campo.fechaUltimaPesada)}</div>
+          <div class="number">${pesada ? formatFecha(pesada.fecha) : 'Sin dato'}</div>
         </div>
         <div class="card">
           <h3>PESO</h3>
-          <div class="number">${formatPeso(campo.pesoUltimaPesada)}</div>
+          <div class="number">${pesada ? formatPeso(pesada.pesoPromedio) : 'Sin dato'}</div>
+          <span class="etiqueta-dato etiqueta-medido">Medido</span>
         </div>
       </div>
     </section>
@@ -226,6 +243,60 @@ function renderFicha(datos) {
       <p>${campo.comentarios || 'Sin dato'}</p>
     </section>
   `;
+}
+
+function renderTabProximamente(titulo) {
+  return `
+    <section class="proximamente">
+      <h2>${titulo}</h2>
+      <p>Próximamente</p>
+    </section>
+  `;
+}
+
+function renderFicha(datos) {
+  const fichaEl = document.getElementById('fichaCampo');
+  if (!fichaEl) return;
+
+  const parametros = new URLSearchParams(window.location.search);
+  const id = parametros.get('id');
+  const tab = parametros.get('tab') || 'resumen';
+  const campo = id ? buscarCampo(datos, id) : null;
+
+  if (!campo) {
+    fichaEl.innerHTML = `
+      <section class="proximamente">
+        <h2>Campo no encontrado</h2>
+        <p>Volvé a <a href="campos.html">Campos</a> y elegí un establecimiento de la lista.</p>
+      </section>
+    `;
+    return;
+  }
+
+  document.title = `ADBlick Ganadería · ${campo.nombre}`;
+
+  let contenido;
+  if (tab === 'pesadas') {
+    contenido = typeof renderTabPesadas === 'function'
+      ? renderTabPesadas(campo)
+      : renderTabProximamente('Pesadas');
+  } else if (tab === 'novedades') {
+    contenido = renderTabProximamente('Novedades');
+  } else if (tab === 'documentos') {
+    contenido = renderTabProximamente('Documentos');
+  } else {
+    contenido = renderTabResumen(campo);
+  }
+
+  fichaEl.innerHTML = `
+    <h2 class="ficha-titulo">${campo.nombre}</h2>
+    ${renderSubnavFicha(campo.id, tab)}
+    ${contenido}
+  `;
+
+  if (tab === 'pesadas' && typeof inicializarGraficoPesadas === 'function') {
+    inicializarGraficoPesadas(campo);
+  }
 }
 
 cargarDatos()

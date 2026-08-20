@@ -9,10 +9,9 @@
       "stockActual": null,
       "pesoIngresoPromedio": 215.27,
       "pesoEstimadoHoy": null,
-      "fechaUltimaPesada": null,
-      "pesoUltimaPesada": null,
       "novedades": [],
-      "comentarios": null
+      "comentarios": null,
+      "pesadas": []
     },
     {
       "id": "campo-2",
@@ -23,10 +22,9 @@
       "stockActual": null,
       "pesoIngresoPromedio": 207.48,
       "pesoEstimadoHoy": null,
-      "fechaUltimaPesada": null,
-      "pesoUltimaPesada": null,
       "novedades": [],
-      "comentarios": null
+      "comentarios": null,
+      "pesadas": []
     },
     {
       "id": "campo-3",
@@ -37,10 +35,9 @@
       "stockActual": null,
       "pesoIngresoPromedio": 201.15,
       "pesoEstimadoHoy": null,
-      "fechaUltimaPesada": null,
-      "pesoUltimaPesada": null,
       "novedades": [],
-      "comentarios": null
+      "comentarios": null,
+      "pesadas": []
     },
     {
       "id": "campo-4",
@@ -51,10 +48,9 @@
       "stockActual": null,
       "pesoIngresoPromedio": 201.76,
       "pesoEstimadoHoy": null,
-      "fechaUltimaPesada": null,
-      "pesoUltimaPesada": null,
       "novedades": [],
-      "comentarios": null
+      "comentarios": null,
+      "pesadas": []
     },
     {
       "id": "campo-5",
@@ -65,10 +61,9 @@
       "stockActual": null,
       "pesoIngresoPromedio": 220.14,
       "pesoEstimadoHoy": null,
-      "fechaUltimaPesada": null,
-      "pesoUltimaPesada": null,
       "novedades": [],
-      "comentarios": null
+      "comentarios": null,
+      "pesadas": []
     },
     {
       "id": "campo-6",
@@ -79,10 +74,9 @@
       "stockActual": null,
       "pesoIngresoPromedio": 225.00,
       "pesoEstimadoHoy": null,
-      "fechaUltimaPesada": null,
-      "pesoUltimaPesada": null,
       "novedades": [],
-      "comentarios": null
+      "comentarios": null,
+      "pesadas": []
     },
     {
       "id": "campo-7",
@@ -93,10 +87,9 @@
       "stockActual": null,
       "pesoIngresoPromedio": 217.55,
       "pesoEstimadoHoy": null,
-      "fechaUltimaPesada": null,
-      "pesoUltimaPesada": null,
       "novedades": [],
-      "comentarios": null
+      "comentarios": null,
+      "pesadas": []
     },
     {
       "id": "campo-8",
@@ -107,10 +100,9 @@
       "stockActual": null,
       "pesoIngresoPromedio": 204.86,
       "pesoEstimadoHoy": null,
-      "fechaUltimaPesada": null,
-      "pesoUltimaPesada": null,
       "novedades": [],
-      "comentarios": null
+      "comentarios": null,
+      "pesadas": []
     },
     {
       "id": "campo-9",
@@ -121,10 +113,9 @@
       "stockActual": null,
       "pesoIngresoPromedio": 0,
       "pesoEstimadoHoy": null,
-      "fechaUltimaPesada": null,
-      "pesoUltimaPesada": null,
       "novedades": [],
-      "comentarios": null
+      "comentarios": null,
+      "pesadas": []
     }
   ]
 }
