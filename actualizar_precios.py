@@ -13,6 +13,7 @@ No hace commit ni push. Solo escribe data/precios.json en el proyecto.
 
 import json
 import sys
+import time
 import urllib.error
 import urllib.request
 from datetime import date
@@ -21,6 +22,10 @@ from pathlib import Path
 
 URL_ORIGEN = "https://www.entresurcosycorralesya.com/ajax-modulo-ternero.php?desde=&hasta="
 RUTA_PRECIOS = Path(__file__).resolve().parent / "data" / "precios.json"
+
+INTENTOS_DESCARGA = 3
+ESPERA_ENTRE_INTENTOS_SEGUNDOS = 5
+TIMEOUT_CONEXION_SEGUNDOS = 30
 
 CATEGORIAS_ESPERADAS = [
     "Terneros -100 Kg.",
@@ -80,23 +85,35 @@ class ParserTablaPrecios(HTMLParser):
 
 
 def descargar_html(url):
-    peticion = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-    try:
-        with urllib.request.urlopen(peticion, timeout=20) as respuesta:
-            estado = respuesta.status
-            contenido = respuesta.read().decode("utf-8", errors="replace")
-    except urllib.error.URLError as error:
-        raise ErrorActualizacion(f"No se pudo conectar a la fuente de precios ({url}): {error}") from error
+    """Descarga la fuente con reintentos: una falla de red transitoria no debe
+    abortar la actualizacion en el primer intento. Si los INTENTOS_DESCARGA
+    fallan todos, se levanta ErrorActualizacion (comportamiento seguro sin
+    cambios: no se escribe data/precios.json ni se hace commit)."""
+    ultimo_error = None
 
-    if estado != 200:
-        raise ErrorActualizacion(f"La fuente de precios respondio con estado HTTP {estado}")
+    for intento in range(1, INTENTOS_DESCARGA + 1):
+        peticion = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+        try:
+            with urllib.request.urlopen(peticion, timeout=TIMEOUT_CONEXION_SEGUNDOS) as respuesta:
+                estado = respuesta.status
+                contenido = respuesta.read().decode("utf-8", errors="replace")
+        except urllib.error.URLError as error:
+            ultimo_error = f"no se pudo conectar ({error})"
+        else:
+            if estado != 200:
+                ultimo_error = f"la fuente respondio con estado HTTP {estado}"
+            elif "<table" not in contenido.lower():
+                ultimo_error = "la respuesta no contiene una tabla (posible cambio de estructura de la pagina)"
+            else:
+                return contenido
 
-    if "<table" not in contenido.lower():
-        raise ErrorActualizacion(
-            "La respuesta no contiene una tabla. Es posible que la pagina haya cambiado de estructura."
-        )
+        print(f"Intento {intento}/{INTENTOS_DESCARGA} fallo: {ultimo_error}")
+        if intento < INTENTOS_DESCARGA:
+            time.sleep(ESPERA_ENTRE_INTENTOS_SEGUNDOS)
 
-    return contenido
+    raise ErrorActualizacion(
+        f"No se pudo obtener la fuente de precios ({url}) despues de {INTENTOS_DESCARGA} intentos: {ultimo_error}"
+    )
 
 
 def convertir_numero_argentino(texto):
