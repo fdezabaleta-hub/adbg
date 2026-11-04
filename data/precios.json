@@ -4618,5 +4618,159 @@
     "bultoPromedio": 1216340.0,
     "bultoMaximo": 1700000.0,
     "bultoMinimo": 600000.0
+  },
+  {
+    "fecha": "04/11/2026",
+    "categoria": "Terneros -100 Kg.",
+    "cantidad": 9,
+    "kiloPromedio": 7000.0,
+    "kiloMaximo": 7000.0,
+    "kiloMinimo": 7000.0,
+    "bultoPromedio": 700000.0,
+    "bultoMaximo": 700000.0,
+    "bultoMinimo": 700000.0
+  },
+  {
+    "fecha": "04/11/2026",
+    "categoria": "Terneros 100-130 Kg.",
+    "cantidad": 4,
+    "kiloPromedio": 6230.77,
+    "kiloMaximo": 6230.77,
+    "kiloMinimo": 6230.77,
+    "bultoPromedio": 810000.0,
+    "bultoMaximo": 810000.0,
+    "bultoMinimo": 810000.0
+  },
+  {
+    "fecha": "04/11/2026",
+    "categoria": "Terneros 130-160 Kg.",
+    "cantidad": 145,
+    "kiloPromedio": 6622.41,
+    "kiloMaximo": 6700.0,
+    "kiloMinimo": 6250.0,
+    "bultoPromedio": 1004138.0,
+    "bultoMaximo": 1005000.0,
+    "bultoMinimo": 1000000.0
+  },
+  {
+    "fecha": "04/11/2026",
+    "categoria": "Terneros 160-180 Kg.",
+    "cantidad": 545,
+    "kiloPromedio": 5653.77,
+    "kiloMaximo": 6235.29,
+    "kiloMinimo": 5050.0,
+    "bultoPromedio": 980661.0,
+    "bultoMaximo": 1090000.0,
+    "bultoMinimo": 909000.0
+  },
+  {
+    "fecha": "04/11/2026",
+    "categoria": "Terneros 180-200 Kg.",
+    "cantidad": 454,
+    "kiloPromedio": 6058.29,
+    "kiloMaximo": 6430.0,
+    "kiloMinimo": 5850.0,
+    "bultoPromedio": 1155382.0,
+    "bultoMaximo": 1253850.0,
+    "bultoMinimo": 1119250.0
+  },
+  {
+    "fecha": "04/11/2026",
+    "categoria": "Terneros 200-230 Kg.",
+    "cantidad": 1083,
+    "kiloPromedio": 5579.16,
+    "kiloMaximo": 6243.9,
+    "kiloMinimo": 5270.0,
+    "bultoPromedio": 1198444.0,
+    "bultoMaximo": 1300000.0,
+    "bultoMinimo": 1144500.0
+  },
+  {
+    "fecha": "04/11/2026",
+    "categoria": "Terneros 230-260 Kg.",
+    "cantidad": 764,
+    "kiloPromedio": 5505.17,
+    "kiloMaximo": 5600.0,
+    "kiloMinimo": 4950.0,
+    "bultoPromedio": 1320674.0,
+    "bultoMaximo": 1420350.0,
+    "bultoMinimo": 1237500.0
+  },
+  {
+    "fecha": "04/11/2026",
+    "categoria": "Novillitos 260-300 Kg.",
+    "cantidad": 709,
+    "kiloPromedio": 5102.32,
+    "kiloMaximo": 5370.37,
+    "kiloMinimo": 4870.0,
+    "bultoPromedio": 1435599.0,
+    "bultoMaximo": 1575000.0,
+    "bultoMinimo": 1350000.0
+  },
+  {
+    "fecha": "04/11/2026",
+    "categoria": "Novillitos 300-330 Kg.",
+    "cantidad": 218,
+    "kiloPromedio": 4915.96,
+    "kiloMaximo": 5370.0,
+    "kiloMinimo": 4660.0,
+    "bultoPromedio": 1553706.0,
+    "bultoMaximo": 1664700.0,
+    "bultoMinimo": 1460000.0
+  },
+  {
+    "fecha": "04/11/2026",
+    "categoria": "Novillitos 330-370 Kg.",
+    "cantidad": 130,
+    "kiloPromedio": 4649.32,
+    "kiloMaximo": 4700.0,
+    "kiloMinimo": 4600.0,
+    "bultoPromedio": 1697000.0,
+    "bultoMaximo": 1702000.0,
+    "bultoMinimo": 1692000.0
+  },
+  {
+    "fecha": "04/11/2026",
+    "categoria": "Novillitos 370-400 Kg.",
+    "cantidad": 98,
+    "kiloPromedio": 4631.16,
+    "kiloMaximo": 4684.21,
+    "kiloMinimo": 4600.0,
+    "bultoPromedio": 1791529.0,
+    "bultoMaximo": 1840000.0,
+    "bultoMinimo": 1778700.0
+  },
+  {
+    "fecha": "04/11/2026",
+    "categoria": "Novillitos +400 Kg.",
+    "cantidad": 0,
+    "kiloPromedio": 0.0,
+    "kiloMaximo": 0.0,
+    "kiloMinimo": 0.0,
+    "bultoPromedio": 0.0,
+    "bultoMaximo": 0.0,
+    "bultoMinimo": 0.0
+  },
+  {
+    "fecha": "04/11/2026",
+    "categoria": "Ternero Holando",
+    "cantidad": 405,
+    "kiloPromedio": 4922.12,
+    "kiloMaximo": 5000.0,
+    "kiloMinimo": 3492.06,
+    "bultoPromedio": 938815.0,
+    "bultoMaximo": 1100000.0,
+    "bultoMinimo": 500000.0
+  },
+  {
+    "fecha": "04/11/2026",
+    "categoria": "Macho entero joven",
+    "cantidad": 16,
+    "kiloPromedio": 5487.18,
+    "kiloMaximo": 5487.18,
+    "kiloMinimo": 5487.18,
+    "bultoPromedio": 1070000.0,
+    "bultoMaximo": 1070000.0,
+    "bultoMinimo": 1070000.0
   }
 ]
